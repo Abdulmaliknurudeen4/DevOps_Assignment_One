@@ -1,0 +1,20 @@
+version: "3"
+services:
+  frontend:
+    image: mydockerhubrepo/frontend
+    build:
+      context: frontend
+      dockerfile: /Dockerfile
+    networks:
+      -talentnetwork:
+
+  backend:
+    image: mydockerhubrepo/backend
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    networks:
+      -talentnetwork:
+
+networks:
+  talentnetwork:
